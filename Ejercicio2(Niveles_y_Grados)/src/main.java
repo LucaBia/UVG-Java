@@ -15,6 +15,7 @@ public class main {
     public static void main (String[] args){
         //boolean wantsToContinue = true;
         nivel minivel = new nivel();
+        grado migrado = new grado();
         Scanner reader = new Scanner(System.in);
         String leer;
         do{
@@ -27,7 +28,15 @@ public class main {
                     minivel.agregarNivel(nombre);
                     break;
                 case "2":
-                    System.out.println("Esto es dos");
+                    System.out.println("Ingrese el nombre del nivel");
+                    String nombreNivel = reader.next();
+                    if(minivel.listaNiveles.contains(nombreNivel)){
+                        System.out.println("Ingrese el nombre del grado");
+                        String nombreGrado = reader.next();
+                        migrado.agregarGrado(nombreGrado);
+                    }else{
+                        System.out.println("Este nivel no ha sido registrado");
+                    }
             }
         }while(leer != "6");
     }

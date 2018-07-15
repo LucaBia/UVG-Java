@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 public class nivel {
@@ -15,8 +14,13 @@ public class nivel {
         }
     }
 
-    // public ArrayList getGrados(){
-    //return this.grados;
-    //}
-
+    public void comprobarNivel(String nombreNivel){
+        if(listaNiveles.contains(nombreNivel)){
+            System.out.println("Ingrese el nombre del grado");
+            grado migrado = new grado();
+            migrado.agregarGrado(nombreNivel);
+        }else{
+            System.out.println("Este nivel no ha sido registrado");
+        }
+    }
 }
