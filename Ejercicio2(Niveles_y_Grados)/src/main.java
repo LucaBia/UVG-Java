@@ -1,6 +1,5 @@
-import java.awt.*;
 import java.util.Scanner;
-import java.io.*;
+
 
 public class main {
     public static String menu(){
@@ -13,23 +12,23 @@ public class main {
                 "\t6. Salir\n";
     }
 
-    public static void main (String[] args) throws IOException {
-       //boolean wantsToContinue = true;
-       nivel minivel = new nivel();
-       Scanner reader = new Scanner(System.in);
-       String leer;
-       do{
-           System.out.println(menu());
-           leer = reader.next();
-           switch(leer){
-               case "1":
-                   System.out.println("Ingrese el nombre del nivel");
-                   String nombre = reader.next();
-                   minivel.agregarNivel(nombre);
-                   break;
-               case "2":
-                   System.out.println("Esto es dos");
-           }
-       }while(leer != "6");
+    public static void main (String[] args){
+        //boolean wantsToContinue = true;
+        nivel minivel = new nivel();
+        Scanner reader = new Scanner(System.in);
+        String leer;
+        do{
+            System.out.println(menu());
+            leer = reader.next();
+            switch(leer){
+                case "1":
+                    System.out.println("Ingrese el nombre del nivel");
+                    String nombre = reader.next();
+                    minivel.agregarNivel(nombre);
+                    break;
+                case "2":
+                    System.out.println("Esto es dos");
+            }
+        }while(leer != "6");
     }
 }

@@ -15,10 +15,8 @@ public class nivel {
         }
     }
 
-   // public ArrayList getGrados(){
-        //return this.grados;
+    // public ArrayList getGrados(){
+    //return this.grados;
     //}
 
 }
-
-
