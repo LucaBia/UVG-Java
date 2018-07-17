@@ -3,6 +3,8 @@ public class grado {
     private String nombre;
     List<String> listaGrados = new ArrayList<String>();
 
+
+
     public void agregarGrado(String nombre){
         if (listaGrados.contains(nombre)){
             System.out.println("Este grado ya ha sido registrado");
@@ -11,4 +13,5 @@ public class grado {
             listaGrados.add(nombre);
         }
     }
+
 }

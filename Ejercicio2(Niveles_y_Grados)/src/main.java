@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -13,12 +15,16 @@ public class main {
     }
 
     public static void main (String[] args){
-        //boolean wantsToContinue = true;
         nivel minivel = new nivel();
         grado migrado = new grado();
         estudiante miestudiante = new estudiante();
         Scanner reader = new Scanner(System.in);
         String leer;
+
+        Boolean continuar = true;
+
+        List<String> nivelesGrados = new ArrayList<String>();
+
         do{
             System.out.println(menu());
             leer = reader.next();
@@ -35,6 +41,7 @@ public class main {
                         System.out.println("Ingrese el nombre del grado");
                         String nombreGrado = reader.next();
                         migrado.agregarGrado(nombreGrado);
+                        minivel.gradosNivel(nombreNivel, nombreGrado);
                     }else{
                         System.out.println("Este nivel no ha sido registrado");
                     }
@@ -58,7 +65,30 @@ public class main {
                     }else{
                         System.out.println("Este nivel no ha sido registrado");
                     }
+                    break;
+                case "4":
+                    System.out.println("Ingrese el nombre del nivel");
+                    String nivel = reader.next();
+                    if(minivel.listaNiveles.contains(nivel)){
+                        System.out.println(migrado.listaGrados);
+                    }
+                    break;
+                case "5":
+                    System.out.println("Ingrese el nombre del nivel");
+                    String nivelAsignacion = reader.next();
+                    if(minivel.listaNiveles.contains(nivelAsignacion)){
+                        System.out.println("Ingrese el nombre del grado");
+                        String gradoAsignacion = reader.next();
+                        if (migrado.listaGrados.contains(gradoAsignacion)){
+                            System.out.println(miestudiante.listaEstudiantes);
+                        }
+                    }
+
+                case "6":
+                    continuar = false;
+                    System.out.println("Gracias por utilizar el programa");
+                    break;
             }
-        }while(leer != "6");
+        }while(continuar);
     }
 }
