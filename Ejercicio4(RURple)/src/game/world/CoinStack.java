@@ -1,4 +1,4 @@
-package world;
+package game.world;
 
 public class CoinStack {
     private int amountCoins;
@@ -25,5 +25,10 @@ public class CoinStack {
 
     public void removeCoin(){
         amountCoins -= 1;
+    }
+
+    @Override
+    public String toString() {
+        return xPosition + "," + yPosition + " " + amountCoins;
     }
 }
