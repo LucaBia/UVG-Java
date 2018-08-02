@@ -56,7 +56,7 @@ public class Map {
     public void updateMap() {
         for (int i =0; i<this.uMap.length;i++){
             for (int j =0; j<this.uMap[i].length; j++){
-                if(j == this.robot.getxPosition() && i == this.robot.getyPosition() && !this.uMap[i][j].equals("*")){
+                if(i == this.robot.getxPosition() && j == this.robot.getyPosition() && !this.uMap[i][j].equals("*")){
                     this.uMap[i][j] = this.robot.toString();
                 } else {
                     System.out.print("");
