@@ -53,20 +53,53 @@ public class Map {
         //System.out.println(this.uMap);
     }
 
-    public void actualizarMapa() {
-        
+    public void updateMap() {
+        for (int i =0; i<this.uMap.length;i++){
+            for (int j =0; j<this.uMap[i].length; j++){
+                if(j == this.robot.getxPosition() && i == this.robot.getyPosition() && !this.uMap[i][j].equals("*")){
+                    this.uMap[i][j] = this.robot.toString();
+                } else {
+                    System.out.print("");
+                }
+            }
+        }
+    }
+
+    public Robot getRobot(){
+        return this.robot;
+    }
+
+    public boolean coins(){
+        boolean thereIsACoin = false;
+        for (CoinStack coin : coins) {
+            if (coin.getxPosition() == this.robot.getxPosition() && coin.getyPosition() == this.robot.getyPosition()) {
+                thereIsACoin = true;
+            }
+        }
+        if (thereIsACoin) {
+            return true;
+        }
+        return false;
+    }
+
+    public void removeCoin(){
+        for (CoinStack coin : coins) {
+            if (coin.getxPosition() == this.robot.getxPosition() && coin.getyPosition() == this.robot.getyPosition()) {
+                coin.setValue(coin.getamountCoins() - 1);
+            }
+        }
     }
 
     @Override
     public String toString() {
         String stringMap = "";
-        /*for (int i = 0; i<this.high; i++){
+        for (int i = 0; i<this.high; i++){
             for (int j = 0; j<this.width ; j++){
                 stringMap += this.uMap[j][i];
 
             }
             stringMap += "\n";
-        }*/
+        }
         stringMap += robot;
         return stringMap;
     }

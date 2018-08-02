@@ -46,19 +46,22 @@ public class Main {
                     System.out.println(line);
                     switch (line){
                         case "MOVE":
-                            miMapa.robot.move();
+                            miMapa.getRobot().move();
                             break;
                         case "PICK":
-                            miMapa.robot.pick();
+                            if (miMapa.coins()){
+                                miMapa.getRobot().pick();
+                                miMapa.removeCoin();
+                            }
                             break;
                         case "ROTATE":
-                            miMapa.robot.rotate();
+                            miMapa.getRobot().rotate();
                             System.out.println(miMapa.robot);
                             break;
 
                     }
+                    miMapa.updateMap();
                     System.out.println(miMapa);
-                    miMapa.actualizarMapa();
                 }
 
             }catch (IOException e){

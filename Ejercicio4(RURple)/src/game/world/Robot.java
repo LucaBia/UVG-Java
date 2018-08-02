@@ -5,6 +5,7 @@ public class Robot {
     private int yPosition;
     private int xPosition;
     private int direction;
+    //private String direction;
 
 
     public Robot(int xPosition, int yPosition, int direction){
@@ -14,11 +15,23 @@ public class Robot {
         this.amountCoins = 0;
     }
 
+    public int getxPosition(){
+        return this.xPosition;
+    }
+
+    public int getyPosition(){
+        return this.yPosition;
+    }
+
+    public int getDirection(){
+        return this.direction;
+    }
+
     public void move(){
         if(direction == 0){
-            this.yPosition += 1;
-        }else if(direction == 2){
             this.yPosition -= 1;
+        }else if(direction == 2){
+            this.yPosition += 1;
         }else if(direction == 1){
             this.xPosition += 1;
         }else if(direction == 3){
@@ -49,7 +62,7 @@ public class Robot {
             case 1: return ">";
             case 2: return "v";
             case 3: return "<";
-            default: return "";
+            default: return ">";
         }
     }
 }

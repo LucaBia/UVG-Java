@@ -20,12 +20,13 @@ public class CoinStack {
     }
 
     public int getamountCoins(){
-        return amountCoins;
+        return this.amountCoins;
     }
 
-    public void removeCoin(){
-        amountCoins -= 1;
+    public void setValue(int amount){
+        this.amountCoins = amount;
     }
+
 
     @Override
     public String toString() {
